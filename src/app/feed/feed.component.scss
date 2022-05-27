@@ -1,0 +1,43 @@
+.usuario {
+    color: gray;
+    font-size: 12px;
+    padding: 20px 10px;
+}
+
+
+.card {
+    border: solid 1px gray;
+    margin-bottom: 10px;
+}
+
+.botones {
+    display: flex;
+    padding-left: 8px;
+}
+
+ion-avatar{
+    align-self: center;
+    width: 34px;
+    height: 34px;
+    
+}
+.usuario-card-header {
+    display: flex;
+}
+.label{
+    align-self: center;
+    margin-left: 10px;
+}
+
+#gridFondo {
+    background-color:silver;
+}
+
+ion-card-header {
+    background-color: darkseagreen;
+}
+
+ion-card-content {
+    background-color: black;
+    color: white;
+}

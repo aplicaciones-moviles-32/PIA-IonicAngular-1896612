@@ -1,0 +1,7 @@
+{
+  "name": "Instagram Bueno con Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

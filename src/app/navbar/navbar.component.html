@@ -1,0 +1,43 @@
+<!--Completamente funcional, responsiva-->
+<ion-header>
+<ion-toolbar  >
+  <ion-title> InstagramBQF </ion-title>
+    
+      <ion-buttons class="perfil" *ngIf="userLogged|async as user">
+          <ion-button>
+
+            <ion-avatar slot = "start" > 
+              <ion-img src="{{user.photoURL}}" id="user-header-pic"></ion-img>
+            </ion-avatar>
+           
+
+          </ion-button>
+                <ion-popover trigger="user-header-pic">
+                  <ng-template>
+                    <ion-list>
+                      <ion-item>
+                        <ion-label>
+                          <ion-button expand="block" color="danger" (click)="cerrarSesion()">Cerrar Sesion</ion-button>
+                        </ion-label>
+                      </ion-item>
+                    </ion-list>
+                  </ng-template>
+                </ion-popover>
+      </ion-buttons>
+
+      <ion-buttons slot = "end" *ngIf="userLogged|async as user">
+        <ion-button color="black" id="trigger-notificaciones">
+          <ion-icon name="heart-outline"></ion-icon>
+        </ion-button>
+        <ion-popover trigger="trigger-notificaciones" show-backdrop="false">
+          <ng-template>
+            <ion-list>
+              <ion-item>
+               Notificaciones de seguidores/fotos
+              </ion-item>
+            </ion-list>
+          </ng-template>
+        </ion-popover>
+      </ion-buttons>
+</ion-toolbar>
+</ion-header>

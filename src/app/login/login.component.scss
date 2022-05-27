@@ -1,0 +1,20 @@
+#ContenedorGeneral {
+    height: 100%; 
+    display: flex;
+     align-items: center; 
+     justify-content: center; 
+}
+
+#EncabezadoLogin {
+    color: black;
+    background-color: pink;
+    padding-bottom: 3px;
+}
+
+#ContenedorLogin {
+    background-color: greenyellow;
+}
+
+#LabelCorreo {
+    padding-top: 10px;
+}

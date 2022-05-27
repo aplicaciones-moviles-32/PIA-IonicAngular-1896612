@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bd-pia-appmoviles": {
+      "hosting": {
+        "app": [
+          "bd-pia-appmoviles"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bd-pia-appmoviles"
+  }
+}

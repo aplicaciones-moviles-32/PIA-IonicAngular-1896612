@@ -1,0 +1,66 @@
+<ion-content *ngIf="userLogged|async; else elseBlock" mode="ios">
+  
+  <!--Encabezado, historia de la persona, unica historia-->
+  <ion-grid>
+      <ion-row>
+          <ion-col size-md="8" offset-md="2">
+              <app-historias></app-historias>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  
+  <!--Publicaciones del feed-->
+  <ion-grid id="gridFondo">
+      <ion-row *ngFor="let post of posts; let idPost = index;">
+          <ion-col  size-md="8" offset-md="2">
+              <ion-card >
+                  <ion-card-header>
+
+                      <ion-grid>
+                          <ion-row>
+                              <ion-col size="9">
+                                  <div class="usuario-card-header">   
+
+                                      <ion-avatar>
+                                          <img *ngIf="post.imgUser else noimagen" src="{{post.imgUser}}" width="50px">
+                                          <ng-template #noimagen>
+                                            <img  src="https://th.bing.com/th/id/R.c7976bfe16d70cc78de312dfb4a21eba?rik=0AmD6klzvjZVEQ&pid=ImgRaw&r=0" width="50px">
+                                          </ng-template> 
+                                      </ion-avatar>
+                                      <ion-label *ngIf="post.userName else nouser" class="label">{{post.userName}}</ion-label>
+
+                                      <ng-template #nouser>
+                                        <ion-label  class="label">Nombre Predeterminado</ion-label>
+                                      </ng-template> 
+                                      
+                                  </div>
+                                </ion-col>
+                          </ion-row>
+                      </ion-grid>
+
+                  </ion-card-header>
+                  <ion-card-content>
+
+                      <ion-img  [src]="post.imgPublicacion" [routerLink]="['/publicacion',idPost]"></ion-img>
+                      <br>
+                      {{post.caption}}
+                      <!--Editar publicacion desde la feed, innecesario -->
+                      <div class="botones">
+                          <ion-button class="botones" color="{{colorHappy}}" (click)="happy()"><ion-icon name="happy"></ion-icon></ion-button>
+                          <ion-button class="botones" color = "{{colorComent}}" (click)="coment()"><ion-icon name="chatbubbles"></ion-icon></ion-button>
+                          <ion-button class="botones" color="{{colorSend}}" (click)="send()"><ion-icon name="send"></ion-icon></ion-button>
+                          <ion-button class="botones" color="{{colorSave}}" (click)="save()"><ion-icon name="bookmark"></ion-icon></ion-button>
+                      </div>    
+
+                  </ion-card-content>
+               </ion-card>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ng-template #elseBlock>
+  <ion-content>
+    <app-login></app-login>
+  </ion-content>
+</ng-template>  

@@ -1,0 +1,66 @@
+<!--Esta parte ya quedó-->
+<ion-content *ngIf="userLogged|async as user; else elseBlock">
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <ion-avatar class="perfil-usuario-avatar">
+                    <ion-img src="{{user.photoURL}}" alt="" class="fotoperfil"></ion-img>
+                </ion-avatar>
+                </div>
+            </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <ion-col class="titulo">
+                    @{{user.displayName}}
+                  </ion-col>
+                <p class="texto">¡Hola justo ahora estoy usando "Instagram bueno que funciona"!
+                    Seamos muy buenos amigos:=)
+                </p>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-signs"></i> Ubicacion geográfica del usuario: </li>
+                    <ion-label>Latitud (y): </ion-label>{{latitud}}
+                                    <br>
+                    <ion-label>Longitud(x): </ion-label>{{longitud}}
+                </ul>
+                <ul class="lista-datos">
+                    <ion-col>
+                        <p><strong>4 Publicaciones</strong></p>
+                        <p></p>
+                    </ion-col>
+                    <ion-col>
+                        <p><strong>619 Followers</strong></p>
+                        <p></p>
+                    </ion-col>
+                    <ion-col>
+                        <p><strong>14 Follows</strong></p>
+                        <p></p>
+                    </ion-col>
+                </ul>
+            </div>
+            <div class="redes-sociales">
+                <ion-row>
+                    <ion-button color="dark" href="/editar">
+                        Cambiar datos de Perfil
+                    </ion-button>
+                </ion-row>
+            </div>
+        </div>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col size-md="8" offset-md="2">
+                    <app-publicaciones></app-publicaciones>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </section>
+ 
+</ion-content>
+
+<ng-template #elseBlock>
+  <app-login></app-login>
+</ng-template>

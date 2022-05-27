@@ -1,0 +1,42 @@
+<!--Esta parte ya esta terminada-->
+<ion-content>
+<div class="container">
+  <div class="login-container">
+    <div class="register">
+      <h2>Registrarse a la app</h2>
+      <ion-card-content action="">
+
+        <ion-input placeholder="Nombre del usuario" required [(ngModel)]="usuario.nombre"></ion-input>
+        <ion-input placeholder="Correo" required [(ngModel)]="usuario.email"></ion-input>
+        <ion-input type="password" placeholder="contraseña (min 8 carac.)" required [(ngModel)]="usuario.contrasena"></ion-input>
+        <ion-input type="password" placeholder="confirma tu contraseña" required [(ngModel)]="usuario.contrasena2"></ion-input>
+
+        <ion-label>¿Por aquí no era? ¡Vuelve al inicio de sesion!<a href="/feed"> Iniciar Sesion</a></ion-label>
+      </ion-card-content>
+    </div>
+    <div class="login">
+      <h2>Tomar foto de perfil</h2>
+      <div class="login-items">
+        
+
+        <input style="display: none;"  type="file" accept=".png,.jpg,.jpeg"  (change)="cargarImagen($event)" id="inputFile">
+                <div style="text-align: center;">
+                  <ion-label>Subir una foto de perfil</ion-label>
+                  <br>
+                  
+                  <label  for="inputFile"><ion-icon  size="large" name="image-outline"></ion-icon></label>
+                </div>
+            
+          
+          <div *ngIf="imagenSubida" style="text-align: center;">
+            
+            <img src="{{imagenSubida}}" style="width: 50%;">
+            <br>
+            <ion-button expand="block" (click)="Registro()">Registrarse</ion-button> 
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

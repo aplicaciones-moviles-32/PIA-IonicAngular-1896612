@@ -1,0 +1,26 @@
+<div id="ContenedorGeneral">
+    
+  <ion-card id="ContenedorLogin">
+    <ion-card-header id="EncabezadoLogin">
+      <ion-card-title class="ion-text-center">Iniciar Sesión</ion-card-title>
+      
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <div >
+
+          <ion-label id="LabelCorreo">Correo electronico: </ion-label>
+          <ion-input placeholder="correo@gmail.com" required [(ngModel)]="usuario.email"></ion-input>
+          
+          <ion-label>Contraseña: </ion-label>
+          <ion-input type="password" placeholder="ingresa tu contraseña" required [(ngModel)]="usuario.contrasena"></ion-input>
+          <ion-button expand="block" (click)="Ingresar()">Ingresar</ion-button>
+          
+          <br>
+
+          <ion-label> ¿Que haces sin cuenta? ¡CREA UNA! <a href="/registro">Registrate</a></ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
